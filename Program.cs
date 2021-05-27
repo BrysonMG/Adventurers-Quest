@@ -17,6 +17,8 @@ namespace Quest
             Hat YourHat = new Hat();
             YourHat.ShininessLevel = 10;
 
+            Prize ThePrize = new Prize("Gold!");
+
             bool Replay = true;
             while (Replay)
             {
@@ -91,6 +93,8 @@ namespace Quest
                 {
                     Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
                 }
+
+                ThePrize.ShowPrize(theAdventurer);
 
                 Console.WriteLine();
                 Console.WriteLine("Would you like to play again? (Y/N):");
