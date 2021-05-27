@@ -9,11 +9,23 @@ namespace Quest
     {
         static void Main(string[] args)
         {
+            Robe YourRobe = new Robe();
+            // YourRobe.Colors.Add("Red"); //The program doesn't like these lines...
+            // YourRobe.Colors.Add("Gold");
+            YourRobe.LengthInches = 60;
+
+            Hat YourHat = new Hat();
+            YourHat.ShininessLevel = 10;
+
             bool Replay = true;
             while (Replay)
             {
                 Console.WriteLine("What is your name?");
                 string PlayerName = Console.ReadLine();
+                // Make a new "Adventurer" object using the "Adventurer" class
+                Adventurer theAdventurer = new Adventurer(PlayerName, YourRobe, YourHat);
+                Console.WriteLine(theAdventurer.GetDescription());
+
                 // Create a few challenges for our Adventurer's quest
                 // The "Challenge" Constructor takes three arguments
                 //   the text of the challenge
@@ -47,8 +59,6 @@ namespace Quest
                 int minAwesomeness = 0;
                 int maxAwesomeness = 100;
 
-                // Make a new "Adventurer" object using the "Adventurer" class
-                Adventurer theAdventurer = new Adventurer(PlayerName);
 
                 // A list of challenges for the Adventurer to complete
                 // Note we can use the List class here because have the line "using System.Collections.Generic;" at the top of the file.
